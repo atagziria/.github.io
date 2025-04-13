@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>FixPhone - Réparation téléphones Algérie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1976D2;
+      --primary-dark: #145ca0;
+      --secondary: #FF5722;
+      --white: #ffffff;
+      --gray-light: #f9fafc;
+      --text: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--gray-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header simplifié */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      padding: 2rem 1rem;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .header-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .header-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: var(--primary-dark);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Section Formulaires */
+    .forms-section {
+      padding: 3rem 1rem;
+      background-color: var(--white);
+    }
+
+    .forms-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .form-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 250px;
+      padding: 1rem 1.5rem;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-btn i {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* Section Contact */
+    .contact-section {
+      background-color: #f8f9fa;
+      padding: 3rem 1rem;
+    }
+    
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .contact-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .contact-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    
+    .contact-card-header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .contact-card-header i {
+      font-size: 1.2rem;
+    }
+    
+    .contact-card-body {
+      padding: 1.5rem;
+    }
+    
+    .contact-method {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    
+    .contact-method i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-top: 0.2rem;
+    }
+    
+    .contact-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+      margin: 0.3rem 0;
+      word-break: break-all;
+    }
+    
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+    
+    .map-container {
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 200px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Formulaire de contact */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .submit-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* Adaptations mobile */
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 2rem;
+      }
+      
+      .header-subtitle {
+        font-size: 1rem;
+      }
+      
+      .contact-grid,
+      .form-buttons {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-card,
+      .form-btn {
+        margin-bottom: 1.5rem;
+        width: 100%;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .nav-container a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Animation pour les appareils mobiles */
+    @media (hover: none) {
+      .contact-card:hover,
+      .form-btn:hover,
+      .submit-btn:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Simplifié -->
+<header>
+  <h1 class="header-title">FIXPHONE</h1>
+  <p class="header-subtitle">Premier acteur de réparation de téléphone en Algérie</p>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <a href="#accueil"><i class="fas fa-home"></i> Accueil</a>
+    <a href="#services"><i class="fas fa-tools"></i> Services</a>
+    <a href="#formulaires"><i class="fas fa-file-alt"></i> Formulaires</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+</nav>
+
+<!-- Section Formulaires -->
+<section id="formulaires" class="forms-section">
+  <div class="forms-container">
+    <h2>Accès aux Formulaires</h2>
+    <p>Utilisez ces formulaires pour accélérer vos demandes de service</p>
+    
+    <div class="form-buttons">
+      <a href="https://docs.google.com/forms/d/1PPw34z8-BLLIR-BrV4vT_U7Fvjfkg7xPfrAupPzg7pE/viewform" target="_blank" class="form-btn">
+        <i class="fas fa-mobile-alt"></i> Téléphone Neuf
+      </a>
+      
+      <a href="https://docs.google.com/forms/d/1nLM-A3CDLiRygRWP8EFL5etuskMUeJNBpU59gZfr_Hs/viewform" target="_blank" class="form-btn">
+        <i class="fas fa-exchange-alt"></i> Téléphone Retour
+      </a>
+      
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7bSU2XlVyGx5S5UVhNGkliKt5feqx2nzHiIYyqUfMqzznqw/viewform?usp=header" target="_blank" class="form-btn">
+        <i class="fas fa-shopping-cart"></i> Commande
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h2>Contactez notre équipe</h2>
+    <p class="contact-subtitle">Experts en réparation téléphone</p>
+    
+    <div class="contact-grid">
+      <!-- Carte de localisation -->
+      <div class="contact-card contact-map">
+        <div class="contact-card-header">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Notre atelier</h3>
+        </div>
+        <div class="contact-card-body">
+          <p>📍 P4CW+R34, Rue des Frères Oudak, El-Harrach, Alger</p>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25580.42337031445!2d3.158754!3d36.706884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5225f8d3b3a5%3A0x15d63c8b4a4b4b4b!2sEl-Harrach!5e0!3m2!1sfr!2sdz!4v1620000000000!5m2!1sfr!2sdz" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact direct -->
+      <div class="contact-card contact-methods">
+        <div class="contact-card-header">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Support Technique</h3>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-method">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/213123456789" target="_blank" class="contact-link">+213 123 45 67 89</a>
+              <small>Support</small>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Téléphone</h4>
+              <a href="tel:+213123456789" class="contact-link">+213 123 45 67 89</a>
+              <small>Service client</small>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email professionnel</h4>
+              <a href="mailto:FixPhone.flash@outlook.com" class="contact-link">FixPhone.flash@outlook.com</a>
+              <small>Réponse sous 24h</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de contact simplifié -->
+      <div class="contact-card contact-form">
+        <div class="contact-card-header">
+          <i class="fas fa-envelope"></i>
+          <h3>Nous contacter</h3>
+        </div>
+        <div class="contact-card-body">
+          <form id="contact-form" action="https://formsubmit.co/FixPhone.flash@outlook.com" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau message du site FixPhone">
+            <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous vous contacterons dans les plus brefs délais.">
+            
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Votre nom complet" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Votre téléphone">
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Validation du formulaire de contact
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const phone = this.elements['phone'].value;
+    if (phone && !phone.match(/^\+?\d{9,15}$/)) {
+      alert("Veuillez entrer un numéro de téléphone valide");
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
